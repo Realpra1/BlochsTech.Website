@@ -2,10 +2,12 @@
 
 namespace BlochsTech.Website.Domain.Common
 {
-    public interface IEntity<T>
+    public interface IEntity 
     {
-        T Id { get; set; }
+        int Id { get; set; }
 
         DateTime CreatedDate { get; set; }
+
+        DateTime UpdatedDate { get; set; }
     }
 }

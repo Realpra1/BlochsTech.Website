@@ -4,7 +4,7 @@ using System;
 
 namespace BlochsTech.Website.Domain.EntityModel
 {
-    class PurchaseOrder : Entity<Guid>
+   public class PurchaseOrder : Entity
     {
         [Required]
         [MaxLength(50)]

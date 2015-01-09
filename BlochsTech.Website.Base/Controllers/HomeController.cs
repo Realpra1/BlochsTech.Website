@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace BlochsTech.Website.Base.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+
+        public ActionResult TerminalApps()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Info()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Company()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
     }
 }
