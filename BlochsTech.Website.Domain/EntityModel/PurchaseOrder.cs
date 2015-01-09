@@ -1,9 +1,6 @@
-﻿using BlochsTech.Website.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations;
+using BlochsTech.Website.Domain.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlochsTech.Website.Domain.EntityModel
 {
@@ -11,24 +8,34 @@ namespace BlochsTech.Website.Domain.EntityModel
     {
         [Required]
         [MaxLength(50)]
-        public string  RecipientName { get; set; }
-
-        [Required]
-        [MaxLength(20)]
-        public string Phone { get; set; }
+        [Display(Name = "Recipient Name")]
+        public string Name { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Address { get; set; }
+        public string Sreet { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
+        public string Apartament { get; set; }
+
+        [Required]
+        [MaxLength(10)]
+        [Display(Name = "Zip Code")]
+        public int ZipCode { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
         public string State { get; set; }
 
-        [Display(Name = "Country")]
-        public int CountryId { get; set; }
+        [Required]
+        public string Country { get; set; }
 
-        [ForeignKey("CountryId")]
-        public virtual Country Country { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string Email { get; set; }
+
     }
 }

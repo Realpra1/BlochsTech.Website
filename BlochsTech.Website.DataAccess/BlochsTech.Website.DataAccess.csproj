@@ -51,7 +51,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Context\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Repository\" />
   </ItemGroup>
