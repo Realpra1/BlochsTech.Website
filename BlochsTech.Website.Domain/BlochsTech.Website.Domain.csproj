@@ -52,11 +52,21 @@
     <Compile Include="Common\IEntity.cs" />
     <Compile Include="Context\BlochsTechContext.cs" />
     <Compile Include="EntityModel\PurchaseOrder.cs" />
+    <Compile Include="Migrations\201501101222088_InitDB_m1.cs" />
+    <Compile Include="Migrations\201501101222088_InitDB_m1.Designer.cs">
+      <DependentUpon>201501101222088_InitDB_m1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201501101222088_InitDB_m1.resx">
+      <DependentUpon>201501101222088_InitDB_m1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

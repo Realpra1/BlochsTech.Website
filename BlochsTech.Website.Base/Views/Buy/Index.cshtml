@@ -1,8 +1,141 @@
-﻿
+﻿@model BlochsTech.Website.Base.ViewModel.PurchaseOrderViewModel
 @{
     ViewBag.Title = "Buy";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">
+    /*.form-group {
+        padding-top: 40px;
+    }*/
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+</style>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-<h2>Buy</h2>
+    @using (Html.BeginForm("Create", "Buy", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <h4> A Bitcoin smart card the revolutiuzonizes the world. </h4>
+        <h4>See all the details [link].</h4>
+        @*@Html.ValidationSummary()*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmEmail, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CardType, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.CardType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sreet, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sreet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sreet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Apartament, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Apartament, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Apartament, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class=" col-sm-5">
+                @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-sm-12" })
+                @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", style = "width:120px" } })
+                @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+            </div>
+            <div class=" col-sm-7">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-sm-12" })
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-sm-12" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Country, (IEnumerable<SelectListItem>)ViewBag.CountryList, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <br />
+            <div class="col-md-12">
+                <input type="submit" value="By card for 19.95" class="btn btn-info btn-lg" />
+            </div>
+        </div>
+
+    }
+
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="row">
+        <div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <br />
+                <img class="img-circle" src="~/Images/credit-card-icon.png" height="160" alt="">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h4>Bitcoin Smart Card</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Spend Bitcoins easily</li>
+                    <li class="list-group-item">Open source card</li>
+                    <li class="list-group-item">Awesome</li>
+                </ul>
+                <p>19.95 usd</p>
+            </div>
+            <a href="#" class="btn btn-info btn-sm" style="margin-left: 15px;">Read more bitcoin</a>
+        </div>
+
+        <hr />
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul class="list-group">
+                <li class="list-group-item">Sent within 24 hours</li>
+                <li class="list-group-item">Get a refund if you're unhappy (good luck dealing with Martin)</li>
+                <li class="list-group-item">Additional cake item</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")
 
