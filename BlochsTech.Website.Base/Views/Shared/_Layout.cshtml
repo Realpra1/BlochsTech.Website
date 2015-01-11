@@ -6,6 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
 
@@ -31,18 +33,18 @@
     </div>
 
     <div class="container">
-        <div class="row mt centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                @RenderBody()
-            </div> <!-- /col-lg-6 -->
+        <div class="row">
+            <br/>
+            <br />
+            <br />
+            @RenderBody()
         </div> <!-- /row -->
     </div><!-- /container -->
 
     <div class="container">
         <p class="centered">&copy; @DateTime.Now.Year - BlochsTech</p>
     </div><!-- /container -->
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+ 
     @RenderSection("scripts", required: false)
 </body>
 </html>

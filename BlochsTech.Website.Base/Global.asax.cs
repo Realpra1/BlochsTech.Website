@@ -15,6 +15,8 @@ namespace BlochsTech.Website.Base
     {
         protected void Application_Start()
         {
+            Bootstrap.Log.Info("Application Start");
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

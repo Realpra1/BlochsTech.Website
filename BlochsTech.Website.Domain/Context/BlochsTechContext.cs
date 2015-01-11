@@ -6,7 +6,7 @@ using BlochsTech.Website.Domain.EntityModel;
 
 namespace BlochsTech.Website.Domain.Context
 {
-    internal class BlochsTechContext : DbContext
+    public class BlochsTechContext : DbContext
     {
         public BlochsTechContext()
             : base("Name=BlochsTechContext")
