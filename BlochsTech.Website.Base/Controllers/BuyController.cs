@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Web;
 using System.Web.Mvc;
 using BlochsTech.Website.Base.Helper;
 using BlochsTech.Website.Base.ViewModel;
@@ -31,7 +33,7 @@ namespace BlochsTech.Website.Base.Controllers
         // POST: /purchaseOrder/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PurchaseOrderViewModel purchaseOrder)
+        public ActionResult Create(PurchaseOrderViewModel purchaseOrder, string payPalLink)
         {
             if (ModelState.IsValid)
             {
@@ -46,14 +48,22 @@ namespace BlochsTech.Website.Base.Controllers
                         Name = purchaseOrder.Name,
                         Sreet = purchaseOrder.Sreet,
                         State = purchaseOrder.State,
-                        ZipCode = purchaseOrder.ZipCode
+                        ZipCode = purchaseOrder.ZipCode,
                     };
+
+                    string url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + HttpUtility.UrlPathEncode(ConfigurationManager.AppSettings["PayPalEmail"] +
+                         "&item_name=Simple_Card&first_name=" + purchaseOrder.Name + "&address1=" + purchaseOrder.Sreet + "&address2=" +
+                         purchaseOrder.Apartament + " &city=" + purchaseOrder.City + "&state=" + purchaseOrder.State + "&zip=" + purchaseOrder.ZipCode.ToString() + "&country=" + purchaseOrder.Country +
+                         "&Simple_card=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&currency_code=USD&amount=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&email=" + purchaseOrder.Email);
+
+                    MailHelper.SendEmail(model.Name, model.Email, url);
+                    Bootstrap.Log.Info("Send email to client {0} and  email: {1}.", model.Name, model.Email);
 
                     _purchaseOrderService.Create(model);
                     Bootstrap.Log.Info("Client with name {0} and  email: {1}. Save to database.", model.Name, model.Email);
 
-                    MailHelper.SendEmail(model.Name, model.Email, model.Sreet);
-                   // Bootstrap.Log.Info("Client with email: {0}. Save to database.", model.Email);
+                    Bootstrap.Log.Info("Client with email: {0}. Redirect to {1}", model.Email, url);
+                    Response.Redirect(url);
                 }
                 catch (Exception e)
                 {
@@ -61,6 +71,7 @@ namespace BlochsTech.Website.Base.Controllers
                 }
                 return RedirectToAction("Index");
             }
+
             ViewBag.CountryList = CountriesHelper.GetCountries();
             return View("Index", purchaseOrder);
         }

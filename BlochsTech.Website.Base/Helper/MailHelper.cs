@@ -28,7 +28,7 @@ namespace BlochsTech.Website.Base.Helper
                 msg.From = new MailAddress(senderAddress);
                 msg.To.Add(new MailAddress(sendTo));
                 msg.Subject = ApplicationStringConst.SubjectEmail;
-                msg.Body = string.Format(ApplicationStringConst.BodyEmail, name, sendTo); 
+                msg.Body = string.Format(ApplicationStringConst.BodyEmail, name, payPalLink); 
                 msg.IsBodyHtml = true;
                 smtpClient.Send(msg);
 
