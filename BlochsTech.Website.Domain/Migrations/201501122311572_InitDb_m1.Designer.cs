@@ -7,13 +7,13 @@ namespace BlochsTech.Website.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class InitDB_m1 : IMigrationMetadata
+    public sealed partial class InitDb_m1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDB_m1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDb_m1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201501101222088_InitDB_m1"; }
+            get { return "201501122311572_InitDb_m1"; }
         }
         
         string IMigrationMetadata.Source

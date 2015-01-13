@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - BlochsTech</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -21,6 +21,7 @@
                 </button>
                 @Html.ActionLink("BlochsTech", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Buy", "Index", "Buy")</li>
@@ -33,18 +34,16 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <br/>
-            <br />
-            <br />
-            @RenderBody()
-        </div> <!-- /row -->
+        <br />
+        <br />
+        <br />
+        @RenderBody()
+
     </div><!-- /container -->
 
     <div class="container">
         <p class="centered">&copy; @DateTime.Now.Year - BlochsTech</p>
     </div><!-- /container -->
- 
     @RenderSection("scripts", required: false)
 </body>
 </html>
