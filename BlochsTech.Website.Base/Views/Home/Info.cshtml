@@ -1,8 +1,9 @@
-﻿
+﻿@using System.Configuration
 @{
     ViewBag.Title = "Info";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Info</h2>
- 
+<br />
+<h4>See all the details <a href="@ConfigurationManager.AppSettings["DetailCardLink"]"> [link]</a>.</h4>

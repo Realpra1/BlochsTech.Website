@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using BlochsTech.Website.Base.Helper
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,15 +20,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("BlochsTech", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BlochsTech", "Index", "Buy", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-
+           
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Buy", "Index", "Buy")</li>
-                    <li>@Html.ActionLink("Terminal Apps", "TerminalApps", "Home")</li>
-                    <li>@Html.ActionLink("Info", "Info", "Home")</li>
-                    <li>@Html.ActionLink("Company", "Company", "Home")</li>
+                    <li class="@Html.IsSelected(action: "Index")">@Html.ActionLink("Buy", "Index", "Buy")</li>
+                    <li class="@Html.IsSelected(action: "TerminalApps")">@Html.ActionLink("Terminal Apps", "TerminalApps", "Home")</li>
+                    <li class="@Html.IsSelected(action: "Info")">@Html.ActionLink("Info", "Info", "Home")</li>
+                    <li class="@Html.IsSelected(action: "Company")">@Html.ActionLink("Company", "Company", "Home")</li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

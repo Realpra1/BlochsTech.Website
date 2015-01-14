@@ -70,6 +70,18 @@ namespace BlochsTech.Website.Base.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;The card is a smart card based ultra-light Bitcoin client. This means the security integrity from the decades old smart card industry, cheap pricing and future proof interoperability.
+        ///The card will require Bitcoin blockchain data before being able to sign anything and will even verify the difficulty level. &lt;/p&gt;
+        ///&lt;p&gt;Using Bitcoin transaction data gained this way the card will internally create and sign new transactions without the private keys ever leaving the card.
+        ///In other words it runs entirely again [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PayPal confirm.
         /// </summary>
         public static string SubjectEmail {

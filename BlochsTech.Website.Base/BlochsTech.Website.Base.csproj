@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Helper\CountriesHelper.cs" />
     <Compile Include="Helper\MailHelper.cs" />
+    <Compile Include="Helper\MenuHelper.cs" />
     <Compile Include="Modules\DataAccessModule.cs" />
     <Compile Include="Modules\DomainModule.cs" />
     <Compile Include="Modules\ServiceModule.cs" />
@@ -157,6 +158,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\main.css" />
+    <Content Include="Images\bitcoinCard.png" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -164,7 +166,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Images\credit-card-icon.png" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
