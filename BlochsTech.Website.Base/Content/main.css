@@ -150,3 +150,7 @@ i {
 .form-horizontal .control-label {
     text-align: left !important; 
 }
+
+.green {
+     color: green;
+}

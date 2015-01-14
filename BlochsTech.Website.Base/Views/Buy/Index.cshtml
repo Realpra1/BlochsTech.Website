@@ -1,10 +1,11 @@
 ﻿@using System.Configuration
+@using BlochsTech.Website.Base.App_LocalResources
 @model BlochsTech.Website.Base.ViewModel.PurchaseOrderViewModel
 @{
     ViewBag.Title = "Buy";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- 
+
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
@@ -12,14 +13,15 @@
         {
             @Html.AntiForgeryToken()
 
-            <h4> A Bitcoin smart card the revolutiuzonizes the world. </h4>
-            <h4>See all the details [link].</h4>
-            @*@Html.ValidationSummary()*@
+            <h4>
+                @Html.Raw(ApplicationStringConst.Description)
+            </h4>
+
             <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-12" })
+                @Html.LabelFor(model => model.CardType, htmlAttributes: new { @class = "control-label col-sm-12" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @Html.EnumDropDownListFor(model => model.CardType, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -40,10 +42,10 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.CardType, htmlAttributes: new { @class = "control-label col-sm-12" })
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-12" })
                 <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.CardType, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -99,6 +101,15 @@
                 </div>
             </div>
         }
+
+        <hr />
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul class="list-unstyled">
+                <li><span class="glyphicon glyphicon-ok green"></span> Sent within 24 hours</li>
+                <li><span class="glyphicon glyphicon-ok green"></span> Get a refund if you're unhappy (good luck dealing with Martin)</li>
+                <li><span class="glyphicon glyphicon-ok green"></span> Additional cake item</li>
+            </ul>
+        </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -106,28 +117,21 @@
             <div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <br />
-                    <img class="img-circle" src="~/Images/credit-card-icon.png" height="160" alt="">
+                    <img src="~/Images/bitcoinCard.png" height="160" alt="">
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <h4>Bitcoin Smart Card</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">Spend Bitcoins easily</li>
-                        <li class="list-group-item">Open source card</li>
-                        <li class="list-group-item">Awesome</li>
+                    <ul class="list-unstyled">
+                        <li><span class="glyphicon glyphicon-ok green"></span> Spend Bitcoins easily</li>
+                        <li><span class="glyphicon glyphicon-ok green"></span> Open source card</li>
+                        <li><span class="glyphicon glyphicon-ok green"></span> Awesome</li>
                     </ul>
-                    <p> @ConfigurationManager.AppSettings["PriceSimpleCard"]  usd</p>
+                    <p>@ConfigurationManager.AppSettings["PriceSimpleCard"]usd</p>
+                    <a href="#" class="btn btn-info btn-sm" style="margin-left: 15px;">Read more bitcoin</a>
                 </div>
-                <a href="#" class="btn btn-info btn-sm" style="margin-left: 15px;">Read more bitcoin</a>
+
             </div>
 
-            <hr />
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-group">
-                    <li class="list-group-item">Sent within 24 hours</li>
-                    <li class="list-group-item">Get a refund if you're unhappy (good luck dealing with Martin)</li>
-                    <li class="list-group-item">Additional cake item</li>
-                </ul>
-            </div>
         </div>
     </div>
 </div>

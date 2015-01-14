@@ -15,7 +15,7 @@ namespace BlochsTech.Website.Base.ViewModel
 
         [Required]
         [MaxLength(100)]
-        [Display(Name = "Sreet address")]
+        [Display(Name = "Street")]
         public string Sreet { get; set; }
 
         [Required]
@@ -32,6 +32,7 @@ namespace BlochsTech.Website.Base.ViewModel
         public string City { get; set; }
 
         [Required]
+        [Display(Name = "State/Region")]
         public string State { get; set; }
 
         public string Country { get; set; }

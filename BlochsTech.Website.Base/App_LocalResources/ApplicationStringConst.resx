@@ -121,6 +121,27 @@
     <value>Hi  {0}, please pay for your purchase at {1}</value>
     <comment>{0}name and {1} payPalLink, variables, use  it</comment>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>&lt;p&gt;The card is a smart card based ultra-light Bitcoin client. This means the security integrity from the decades old smart card industry, cheap pricing and future proof interoperability.
+The card will require Bitcoin blockchain data before being able to sign anything and will even verify the difficulty level. &lt;/p&gt;
+&lt;p&gt;Using Bitcoin transaction data gained this way the card will internally create and sign new transactions without the private keys ever leaving the card.
+In other words it runs entirely against the Bitcoin network and cannot be used in VISA/MasterCard terminals - nor controlled by those companies! &lt;/p&gt;
+&lt;p&gt;However the device is a NFC smart card and will as such communicate with any smartphone with a BOBC terminal app, NFC support and a mobile broadband connection.
+The BOBC ("BlochsTech Open Bitcoin Card") protocol is open source and so is the first Android terminal program, so you should be able to expect a decent amount of Bitcoin merchants accepting your BOBC device soon. &lt;/p&gt;
+&lt;p&gt;If a merchant does not have the terminal app, show him the QR code on the front of your card, it will let him download a BOBC app in but a few minutes.
+Is your merchant offline? No worries, the card caches old transaction data and can still sign new transaction while offline. The merchant's app will broadcast the transaction the next time he re-connects! &lt;/p&gt;
+ &lt;p&gt;This device is perfect for those new to Bitcoin as all you need to do is remember your PIN code and the card will protect you from all hacking threats.
+If you know all about Bitcoin, but don't know how to get your family introduced; give them a BOBC card as a present and load it with some coins! It is by far the easiest and most tangible way to interact with Bitcoin today. &lt;/p&gt;
+&lt;p&gt; (Plus, your wife can never overdraft a BOBC card as there is no such thing as debt in the Bitcoin system!)
+&lt;/p&gt;
+&lt;p&gt;
+* 0.9% fee the first year of use and 0% after that.
+* Bitcoin only product, no central point of failure, once you buy its yours - global reach and open source.
+* Ultra secure and easy to use.
+&lt;/p&gt;
+&lt;p&gt;
+Want to know more? Try our FAQ or check our company information page. &lt;/p&gt;</value>
+  </data>
   <data name="SubjectEmail" xml:space="preserve">
     <value>PayPal confirm</value>
   </data>
