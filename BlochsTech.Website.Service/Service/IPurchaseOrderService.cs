@@ -5,6 +5,11 @@ namespace BlochsTech.Website.Service.Service
 {
     public interface IPurchaseOrderService : IEntityService<PurchaseOrder>
     {
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         PurchaseOrder GetById(int id);
     }
 }

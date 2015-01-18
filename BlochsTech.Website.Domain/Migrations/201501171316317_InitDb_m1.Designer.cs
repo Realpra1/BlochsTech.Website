@@ -13,7 +13,7 @@ namespace BlochsTech.Website.Domain.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201501122311572_InitDb_m1"; }
+            get { return "201501171316317_InitDb_m1"; }
         }
         
         string IMigrationMetadata.Source

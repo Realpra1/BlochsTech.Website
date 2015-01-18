@@ -2,7 +2,7 @@
 
 namespace BlochsTech.Website.Domain.Common
 {
-    public interface IEntity 
+    public interface IEntity
     {
         int Id { get; set; }
 

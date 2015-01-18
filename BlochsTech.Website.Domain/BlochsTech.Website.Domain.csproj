@@ -52,9 +52,9 @@
     <Compile Include="Common\IEntity.cs" />
     <Compile Include="Context\BlochsTechContext.cs" />
     <Compile Include="EntityModel\PurchaseOrder.cs" />
-    <Compile Include="Migrations\201501122311572_InitDb_m1.cs" />
-    <Compile Include="Migrations\201501122311572_InitDb_m1.Designer.cs">
-      <DependentUpon>201501122311572_InitDb_m1.cs</DependentUpon>
+    <Compile Include="Migrations\201501171316317_InitDb_m1.cs" />
+    <Compile Include="Migrations\201501171316317_InitDb_m1.Designer.cs">
+      <DependentUpon>201501171316317_InitDb_m1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,8 +64,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201501122311572_InitDb_m1.resx">
-      <DependentUpon>201501122311572_InitDb_m1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501171316317_InitDb_m1.resx">
+      <DependentUpon>201501171316317_InitDb_m1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

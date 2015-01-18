@@ -1,8 +1,13 @@
-﻿
+﻿@using System.Configuration
+
 @{
     ViewBag.Title = "Terminal Apps";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Terminal Apps</h2>
+<h2>“Terminal app”:</h2>
+<p>
+    Google Play download app
+    <a href="@ConfigurationManager.AppSettings["GooglePlayAppLink"]"><img height="75" src="~/Images/app-icon.png" /></a>
+</p>
 

@@ -9,16 +9,27 @@ using BlochsTech.Website.Service.Service;
 
 namespace BlochsTech.Website.Base.Controllers
 {
+    /// <summary>
+    ///  Buy controller for purchase item.
+    /// </summary>
     public class BuyController : Controller
     {
         //initialize service object
         IPurchaseOrderService _purchaseOrderService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuyController"/> class.
+        /// </summary>
+        /// <param name="purchaseOrderService">The purchase order service.</param>
         public BuyController(IPurchaseOrderService purchaseOrderService)
         {
             _purchaseOrderService = purchaseOrderService;
         }
 
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             ViewBag.CountryList = CountriesHelper.GetCountries();
@@ -28,12 +39,14 @@ namespace BlochsTech.Website.Base.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Buy/
-        // POST: /purchaseOrder/Create
+        /// <summary>
+        /// Creates the specified purchase order.
+        /// </summary>
+        /// <param name="purchaseOrder">The purchase order.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PurchaseOrderViewModel purchaseOrder, string payPalLink)
+        public ActionResult Create(PurchaseOrderViewModel purchaseOrder)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +64,7 @@ namespace BlochsTech.Website.Base.Controllers
                         ZipCode = purchaseOrder.ZipCode,
                     };
 
-                    string url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + HttpUtility.UrlPathEncode(ConfigurationManager.AppSettings["PayPalEmail"] +
+                    string url = ConfigurationManager.AppSettings["PayPalLink"] + "?cmd=_xclick&business=" + HttpUtility.UrlPathEncode(ConfigurationManager.AppSettings["PayPalEmail"] +
                          "&item_name=Simple_Card&first_name=" + purchaseOrder.Name + "&address1=" + purchaseOrder.Sreet + "&address2=" +
                          purchaseOrder.Apartament + " &city=" + purchaseOrder.City + "&state=" + purchaseOrder.State + "&zip=" + purchaseOrder.ZipCode.ToString() + "&country=" + purchaseOrder.Country +
                          "&Simple_card=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&currency_code=USD&amount=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&email=" + purchaseOrder.Email);

@@ -2,13 +2,20 @@
 using System.Configuration;
 using System.Net;
 using System.Net.Mail;
-using BlochsTech.Website.Base.App_LocalResources;
 
 namespace BlochsTech.Website.Base.Helper
 {
+    /// <summary>
+    ///  Send mail helper class.
+    /// </summary>
     public static class MailHelper
     {
-
+        /// <summary>
+        /// Sends the email.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="sendTo">The send to.</param>
+        /// <param name="payPalLink">The PayPal link.</param>
         public static void SendEmail(string name, string sendTo, string payPalLink)
         {
             string senderAddress = ConfigurationManager.AppSettings["smtpUser"];
@@ -27,8 +34,8 @@ namespace BlochsTech.Website.Base.Helper
             {
                 msg.From = new MailAddress(senderAddress);
                 msg.To.Add(new MailAddress(sendTo));
-                msg.Subject = ApplicationStringConst.SubjectEmail;
-                msg.Body = string.Format(ApplicationStringConst.BodyEmail, name, payPalLink); 
+                msg.Subject = ConfigurationManager.AppSettings["SubjectEmail"];
+                msg.Body = string.Format(ConfigurationManager.AppSettings["BodyEmail"], name, payPalLink);
                 msg.IsBodyHtml = true;
                 smtpClient.Send(msg);
 

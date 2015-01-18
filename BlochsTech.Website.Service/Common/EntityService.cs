@@ -10,13 +10,22 @@ namespace BlochsTech.Website.Service.Common
         IUnitOfWork _unitOfWork;
         IGenericRepository<T> _repository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityService{T}"/> class.
+        /// </summary>
+        /// <param name="unitOfWork">The unit of work.</param>
+        /// <param name="repository">The repository.</param>
         public EntityService(IUnitOfWork unitOfWork, IGenericRepository<T> repository)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
         }
 
-
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="ArgumentNullException">entity</exception>
         public virtual void Create(T entity)
         {
             if (entity == null)
@@ -27,7 +36,11 @@ namespace BlochsTech.Website.Service.Common
             _unitOfWork.Commit();
         }
 
-
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="ArgumentNullException">entity</exception>
         public virtual void Update(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
@@ -35,6 +48,11 @@ namespace BlochsTech.Website.Service.Common
             _unitOfWork.Commit();
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="ArgumentNullException">entity</exception>
         public virtual void Delete(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
@@ -42,6 +60,10 @@ namespace BlochsTech.Website.Service.Common
             _unitOfWork.Commit();
         }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
         public virtual IEnumerable<T> GetAll()
         {
             return _repository.GetAll();

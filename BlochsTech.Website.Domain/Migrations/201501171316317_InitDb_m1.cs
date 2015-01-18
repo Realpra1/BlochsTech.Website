@@ -15,7 +15,7 @@ namespace BlochsTech.Website.Domain.Migrations
                         Name = c.String(),
                         Sreet = c.String(),
                         Apartament = c.String(),
-                        ZipCode = c.Int(nullable: false),
+                        ZipCode = c.String(),
                         City = c.String(),
                         State = c.String(),
                         Country = c.String(),
