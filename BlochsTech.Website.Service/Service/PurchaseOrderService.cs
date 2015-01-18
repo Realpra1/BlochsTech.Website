@@ -10,6 +10,11 @@ namespace BlochsTech.Website.Service.Service
         IUnitOfWork _unitOfWork;
         IPurchaseOrderRepository _purchaseOrderRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PurchaseOrderService"/> class.
+        /// </summary>
+        /// <param name="unitOfWork">The unit of work.</param>
+        /// <param name="purchaseOrderRepository">The purchase order repository.</param>
         public PurchaseOrderService(IUnitOfWork unitOfWork, IPurchaseOrderRepository purchaseOrderRepository)
             : base(unitOfWork, purchaseOrderRepository)
         {
@@ -17,6 +22,11 @@ namespace BlochsTech.Website.Service.Service
             _purchaseOrderRepository = purchaseOrderRepository;
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public PurchaseOrder GetById(int id)
         {
             return _purchaseOrderRepository.GetById(id);

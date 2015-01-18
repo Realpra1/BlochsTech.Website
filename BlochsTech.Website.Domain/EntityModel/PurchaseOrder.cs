@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using BlochsTech.Website.Domain.Common;
-using System;
+﻿using BlochsTech.Website.Domain.Common;
 
 namespace BlochsTech.Website.Domain.EntityModel
 {
+    /// <summary>
+    /// Purchase order entity.
+    /// </summary>
     public class PurchaseOrder : Entity
     {
         public string Name { get; set; }
@@ -12,7 +13,7 @@ namespace BlochsTech.Website.Domain.EntityModel
 
         public string Apartament { get; set; }
 
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
 
         public string City { get; set; }
 

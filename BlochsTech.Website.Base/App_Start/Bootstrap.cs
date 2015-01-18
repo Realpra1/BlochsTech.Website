@@ -2,6 +2,9 @@
 
 namespace BlochsTech.Website.Base
 {
+    /// <summary>
+    ///   Bootstrap Nlog get method helper class.
+    /// </summary>
     public static class Bootstrap
     {
         /// <summary>

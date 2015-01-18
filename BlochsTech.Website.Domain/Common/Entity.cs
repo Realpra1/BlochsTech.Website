@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlochsTech.Website.Domain.Common
 {
+    /// <summary>
+    ///  Base model for all entities.
+    /// </summary>
     public abstract class Entity : IEntity
     {
         [Key]

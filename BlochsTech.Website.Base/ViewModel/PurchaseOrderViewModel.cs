@@ -6,6 +6,9 @@ namespace BlochsTech.Website.Base.ViewModel
     {
         SimpleCard
     }
+    /// <summary>
+    ///  Purchase order view model class.
+    /// </summary>
     public class PurchaseOrderViewModel
     {
         [Required]
@@ -25,7 +28,7 @@ namespace BlochsTech.Website.Base.ViewModel
 
         [Required]
         [Display(Name = "Zip Code")]
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
 
         [Required]
         [Display(Name = "City")]

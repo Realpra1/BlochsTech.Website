@@ -4,6 +4,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Info</h2>
-<br />
-<h4>See all the details <a href="@ConfigurationManager.AppSettings["DetailCardLink"]"> [link]</a>.</h4>
+<p>
+    Download protocol and licensing document:  <a href="@ConfigurationManager.AppSettings["ProtocolLicensingDocumentLink"]"> [PDF link]</a>
+
+</p>
+<p>Frequently asked questions and answers: </p>
+<div class="panel-group" id="accordion-faq">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseOne" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Question 1?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Answer 1
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseTwo" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Question 2?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Answer 2
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseThree" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i>Question 3?
+                </a>
+            </h4>
+        </div>
+
+
+        <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Answer 3.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseFour" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Question 4?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseFour" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Answer 4.
+            </div>
+        </div>
+    </div>
+</div>
+

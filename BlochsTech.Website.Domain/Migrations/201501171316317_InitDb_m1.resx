@@ -117,32 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BodyEmail" xml:space="preserve">
-    <value>Hi  {0}, please pay for your purchase at {1}</value>
-    <comment>{0}name and {1} payPalLink, variables, use  it</comment>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1Y227jNhB9L9B/EPTUAlkpl5dtIO8iaydF0HUcrJwt0DdaGttEKUolqcD+tj70k/oLHepKUb7G60URIJBHnDM38sxQ//79T/BxlTDnFYSkKR+4V96l6wCP0pjyxcDN1fzde/fjhx9/CO7jZOV8rdfd6HWoyeXAXSqV3fq+jJaQEOklNBKpTOfKi9LEJ3HqX19e/uJfXfmAEC5iOU7wJeeKJlD8wJ/DlEeQqZywcRoDk5Uc34QFqvNEEpAZiWDgfmJptJRTiJbe7zCTVIE3ShNCuYcoClbKde4YJehYCGzuOoTzVBGFbt++SAiVSPkizFBA2HSdAa6bEyahCue2XX5oZJfXOjK/Vayholwq9Ow4wKubKlW+rf6mhLtNKjGZ95h0tdZRFwkduM+5iJZEwkTEIFzHtng7ZEKv3pX0ErMom9eBu3C2Kl00Gwn3m/67cIY5U7mAAYdcCcIunOd8xmj0G6yn6Z/ABzxnzIwFo8F3HQGKnkWagVDrLzCvInyMXcfv6vm2YqNm6JRhP3J1c+06T2iczBg0W8VIUahSAb8CB0EUxM9EKRBcY0CRmJ51y5b+X1vDvYmnznXGZPUZ+EItBy4+us4DXUFcSyoPXjjFQ4pKSuSwz0goANTZrdxlRCh84uc39QfNhrj47HaGRQXPXR3cSd8hlBQpV5w/mns84Oz80QjQx21kZE4/T6k+Tb3juhvrJYvfiBX4LaP2eVa3IyQ7EJWdlg6bRtUjXOxQFefKKhFd10vkENQmApeu0/pTtj/PYvhN3jd+tl3XL9tu3Z79Lf05GJMswwIb/bqSOGHZrIfvwuPbVlJi+JHc0L0abxtLSMBkAdZbveFjeKBCKiwmmRFdu2Gc9Jb1q7Il47W9jYm3G1Fbh1pNP9v7YMsAYxXNwm6T/IBxa7otUgCNo3Zb7+kXYxVhRGzoe8OU5Qnf1jt3aZedzNQvJYcjVG3KhKhEh2OYTcgEMuWHozV9xoRqhIfjlH3EBBlumA125qZsEp3clKIjvKhbQMeRWng4TkXxJkolOsIXk8A7/pgvDsfrkLiJ13nRxwt86zDZJ9nvHWVrmrQJYhfD2ksa6w3TWowaVOy2/1rUo7tyietgol5prKkuXEsFiacXeOFfbMhocRzqBWPC6RykKgduF9n4vXWV+v9ca3wpY3bM3ea7Xx2oTu3ey8GRo4p5W+CvRAcofkrI6mcT6egbwUlI/an/JDhrsj8Jy5zeT8uWOaGf5lJ3Cj8JqzNpn+ZVf5rWpKm+0TR9INZx03R/vDtiUt4/KJfsib7PUgyj9Nkett84TPcpPfDN72HBCCRdtBD66xiHSHNlC1qveeTztK4ABmt6VC+xCjQGRbAi5E4oOieRwtcRSFnc074Slhc7awbxI5/kKsvVnZSQzFhnQgj83faLG0PX52CS6V/yW4SAblK9qSb8U05Z3Pj9sGFTbYHQ26ciZvQK76kIt1g3SE8pPxCoSt8IMuCa1qeQZAzB5ISH5BXe4hteAj/DgkTrujNvB9lfiG7agxElC0ESWWG0+vobr68/8n74D5bOzncWFgAA</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>&lt;p&gt;The card is a smart card based ultra-light Bitcoin client. This means the security integrity from the decades old smart card industry, cheap pricing and future proof interoperability.
-The card will require Bitcoin blockchain data before being able to sign anything and will even verify the difficulty level. &lt;/p&gt;
-&lt;p&gt;Using Bitcoin transaction data gained this way the card will internally create and sign new transactions without the private keys ever leaving the card.
-In other words it runs entirely against the Bitcoin network and cannot be used in VISA/MasterCard terminals - nor controlled by those companies! &lt;/p&gt;
-&lt;p&gt;However the device is a NFC smart card and will as such communicate with any smartphone with a BOBC terminal app, NFC support and a mobile broadband connection.
-The BOBC ("BlochsTech Open Bitcoin Card") protocol is open source and so is the first Android terminal program, so you should be able to expect a decent amount of Bitcoin merchants accepting your BOBC device soon. &lt;/p&gt;
-&lt;p&gt;If a merchant does not have the terminal app, show him the QR code on the front of your card, it will let him download a BOBC app in but a few minutes.
-Is your merchant offline? No worries, the card caches old transaction data and can still sign new transaction while offline. The merchant's app will broadcast the transaction the next time he re-connects! &lt;/p&gt;
- &lt;p&gt;This device is perfect for those new to Bitcoin as all you need to do is remember your PIN code and the card will protect you from all hacking threats.
-If you know all about Bitcoin, but don't know how to get your family introduced; give them a BOBC card as a present and load it with some coins! It is by far the easiest and most tangible way to interact with Bitcoin today. &lt;/p&gt;
-&lt;p&gt; (Plus, your wife can never overdraft a BOBC card as there is no such thing as debt in the Bitcoin system!)
-&lt;/p&gt;
-&lt;p&gt;
-* 0.9% fee the first year of use and 0% after that.
-* Bitcoin only product, no central point of failure, once you buy its yours - global reach and open source.
-* Ultra secure and easy to use.
-&lt;/p&gt;
-&lt;p&gt;
-Want to know more? Try our FAQ or check our company information page. &lt;/p&gt;</value>
-  </data>
-  <data name="SubjectEmail" xml:space="preserve">
-    <value>PayPal confirm</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

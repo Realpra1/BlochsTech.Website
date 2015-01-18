@@ -14,11 +14,20 @@ namespace BlochsTech.Website.DataAccess.Repository
 
         }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerable<PurchaseOrder> GetAll()
         {
             return _entities.Set<PurchaseOrder>().AsEnumerable();
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public PurchaseOrder GetById(int id)
         {
             return _dbset.Where(x => x.Id == id).FirstOrDefault();
