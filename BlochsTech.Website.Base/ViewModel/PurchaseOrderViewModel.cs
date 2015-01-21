@@ -21,12 +21,10 @@ namespace BlochsTech.Website.Base.ViewModel
         [Display(Name = "Street")]
         public string Sreet { get; set; }
 
-        [Required]
         [MaxLength(100)]
         [Display(Name = "Apt./Unit")]
         public string Apartament { get; set; }
 
-        [Required]
         [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
