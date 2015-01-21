@@ -15,6 +15,7 @@ body {
     color: #555;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
+    height: 100%;
 }
 
 /* Titles */
@@ -148,9 +149,28 @@ i {
     }
 
 .form-horizontal .control-label {
-    text-align: left !important; 
+    text-align: left !important;
 }
 
 .green {
-     color: green;
+    color: green;
+}
+
+#wrap {
+    min-height: 97%;
+    height: auto !important;
+    height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 50px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+    position: relative;
+    margin-top: -50px; /* negative value of footer height */
+    height: 50px;
+    clear: both;
+    padding-top: 20px;
 }
