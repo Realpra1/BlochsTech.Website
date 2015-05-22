@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace BlochsTech.Website.Base.ViewModel
 {
@@ -11,6 +13,12 @@ namespace BlochsTech.Website.Base.ViewModel
     /// </summary>
     public class PurchaseOrderViewModel
     {
+        public PurchaseOrderViewModel()
+        {
+            this.CardTypes = new List<SelectListItem>();    
+            this.CardTypes.Add(new SelectListItem() { Value = CardType.SimpleCard.ToString(), Text = "Normal card"});
+        }
+
         [Required]
         [MaxLength(50)]
         [Display(Name = "Recipient Name")]
@@ -18,7 +26,7 @@ namespace BlochsTech.Website.Base.ViewModel
 
         [Required]
         [MaxLength(100)]
-        [Display(Name = "Street")]
+        [Display(Name = "Street and number")]
         public string Sreet { get; set; }
 
         [MaxLength(100)]
@@ -32,7 +40,6 @@ namespace BlochsTech.Website.Base.ViewModel
         [Display(Name = "City")]
         public string City { get; set; }
 
-        [Required]
         [Display(Name = "State/Region")]
         public string State { get; set; }
 
@@ -46,9 +53,11 @@ namespace BlochsTech.Website.Base.ViewModel
         [Required]
         [MaxLength(100)]
         [Display(Name = "Confirm Email")]
-        [Compare("Email", ErrorMessage = "The Email and confirmation Email do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Email", ErrorMessage = "The Email and confirmation Email do not match.")]
         public string ConfirmEmail { get; set; }
 
         public CardType CardType { get; set; }
+
+        public List<SelectListItem> CardTypes { get; set; }
     }
 }

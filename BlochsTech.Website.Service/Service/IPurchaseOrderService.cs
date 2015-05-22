@@ -11,5 +11,7 @@ namespace BlochsTech.Website.Service.Service
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         PurchaseOrder GetById(int id);
+
+        void CompleteOrder(int orderId, string transactionId);
     }
 }

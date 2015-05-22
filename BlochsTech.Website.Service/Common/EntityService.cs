@@ -26,7 +26,7 @@ namespace BlochsTech.Website.Service.Common
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <exception cref="ArgumentNullException">entity</exception>
-        public virtual void Create(T entity)
+        public virtual T Create(T entity)
         {
             if (entity == null)
             {
@@ -34,6 +34,7 @@ namespace BlochsTech.Website.Service.Common
             }
             _repository.Add(entity);
             _unitOfWork.Commit();
+            return entity;
         }
 
         /// <summary>

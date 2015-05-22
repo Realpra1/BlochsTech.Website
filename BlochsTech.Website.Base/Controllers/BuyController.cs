@@ -46,7 +46,7 @@ namespace BlochsTech.Website.Base.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PurchaseOrderViewModel purchaseOrder)
+        public ActionResult Index(PurchaseOrderViewModel purchaseOrder)
         {
             if (ModelState.IsValid)
             {
@@ -62,17 +62,20 @@ namespace BlochsTech.Website.Base.Controllers
                         Sreet = purchaseOrder.Sreet,
                         State = purchaseOrder.State,
                         ZipCode = purchaseOrder.ZipCode,
+                        Status = PurchaseOrderStatus.Initial
                     };
 
                     string url = ConfigurationManager.AppSettings["PayPalLink"] + "?cmd=_xclick&business=" + HttpUtility.UrlPathEncode(ConfigurationManager.AppSettings["PayPalEmail"] +
-                         "&item_name=Simple_Card&first_name=" + purchaseOrder.Name + "&address1=" + purchaseOrder.Sreet + "&address2=" +
-                         purchaseOrder.Apartament + " &city=" + purchaseOrder.City + "&state=" + purchaseOrder.State + "&zip=" + purchaseOrder.ZipCode.ToString() + "&country=" + purchaseOrder.Country +
-                         "&Simple_card=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&currency_code=USD&amount=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&email=" + purchaseOrder.Email);
+                         "&item_name=BlochsTech Bitcoin Card&first_name=" + purchaseOrder.Name + "&address1=" + purchaseOrder.Sreet + "&address2=" +
+                         purchaseOrder.Apartament + "&city=" + purchaseOrder.City + "&state=" + purchaseOrder.State + "&zip=" + purchaseOrder.ZipCode.ToString() + "&country=" + purchaseOrder.Country +
+                         "&quantity=1&currency_code=EUR&amount=" + ConfigurationManager.AppSettings["PriceSimpleCard"] + "&email=" + purchaseOrder.Email +
+                         "&return=" + Url.Action("Thankyou", "Home", null, protocol: Request.Url.Scheme) + "&notify_url=" + Url.Action("PaypalIpn", "Home", null, protocol: Request.Url.Scheme));
 
                     MailHelper.SendEmail(model.Name, model.Email, url);
                     Bootstrap.Log.Info("Send email to client {0} and  email: {1}.", model.Name, model.Email);
 
-                    _purchaseOrderService.Create(model);
+                    model = _purchaseOrderService.Create(model);
+                    url += "&custom=" + model.Id;
                     Bootstrap.Log.Info("Client with name {0} and  email: {1}. Save to database.", model.Name, model.Email);
 
                     Bootstrap.Log.Info("Client with email: {0}. Redirect to {1}", model.Email, url);

@@ -31,5 +31,13 @@ namespace BlochsTech.Website.Service.Service
         {
             return _purchaseOrderRepository.GetById(id);
         }
+
+        public void CompleteOrder(int orderId, string transactionId)
+        {
+            PurchaseOrder order = _purchaseOrderRepository.GetById(orderId);
+            order.Status = PurchaseOrderStatus.Paid;
+            order.TransactionId = transactionId;
+            _unitOfWork.Commit();
+        }
     }
 }

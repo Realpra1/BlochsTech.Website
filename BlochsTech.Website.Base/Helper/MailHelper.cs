@@ -44,8 +44,6 @@ namespace BlochsTech.Website.Base.Helper
             {
                 Bootstrap.Log.Error("Error send email message to : {0}\n Error message: {1}\n Stack Trace: {2}", sendTo, e.Message, e.StackTrace);
             }
-
         }
-
     }
 }

@@ -10,7 +10,7 @@ namespace BlochsTech.Website.Service.Common
         /// Creates the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        void Create(T entity);
+        T Create(T entity);
 
         /// <summary>
         /// Deletes the specified entity.
