@@ -33,17 +33,20 @@ namespace BlochsTech.Website.Base.Controllers
         }
 
         [HttpPost]
-        public ActionResult PaypalIpn(FormCollection formVals)
+        public JsonResult PaypalIpn(FormCollection formVals)
         {
-            formVals.Add("cmd", "_notify-validate");
-
-            string response = GetPayPalResponse(formVals);
-
+            foreach (var formVal in formVals.Keys)
+            {
+                Bootstrap.Log.Info(string.Format("{0}:{1}", formVal, formVals[formVal.ToString()]));
+            }
+            
+            string response = GetPayPalResponse();
+            Bootstrap.Log.Info(string.Format("{0}:{1}", "response", response));
             if (response == "VERIFIED")
             {
-                string transactionId = Request["txn_id"];
-                string sAmountPaid = Request["mc_gross"];
-                string orderString = Request["custom"];
+                string transactionId = formVals["txn_id"];
+                string sAmountPaid = formVals["mc_gross"];
+                string orderString = formVals["custom"];
 
                 //_logger.Info("IPN Verified for order " + orderID);
 
@@ -57,6 +60,7 @@ namespace BlochsTech.Website.Base.Controllers
                 try
                 {
                     purchaseOrderService.CompleteOrder(orderId, transactionId);
+                    return Json(true);
                 }
                 catch (Exception ex)
                 {
@@ -64,7 +68,7 @@ namespace BlochsTech.Website.Base.Controllers
                 }
             }
 
-            return RedirectToAction("Index", "Buy");
+            return Json(false);
         }
 
         public ActionResult Thankyou()
@@ -80,29 +84,20 @@ namespace BlochsTech.Website.Base.Controllers
         /// <summary>
         /// Utility method for handling PayPal Responses
         /// </summary>
-        public string GetPayPalResponse(FormCollection formVals)
+        public string GetPayPalResponse()
         {
             string paypalUrl = System.Configuration.ConfigurationManager.AppSettings["PayPalLink"];
-
+            Bootstrap.Log.Info(string.Format("{0}:{1}", "paypalUrl", paypalUrl));
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(paypalUrl);
 
             // Set values for the request back
             req.Method = "POST";
             req.ContentType = "application/x-www-form-urlencoded";
-
             byte[] param = Request.BinaryRead(Request.ContentLength);
             string strRequest = Encoding.ASCII.GetString(param);
-
-            StringBuilder sb = new StringBuilder();
-            sb.Append(strRequest);
-
-            foreach (string key in formVals.Keys)
-            {
-                sb.AppendFormat("&{0}={1}", key, formVals[key]);
-            }
-            strRequest += sb.ToString();
+            strRequest += "&cmd=_notify-validate";
             req.ContentLength = strRequest.Length;
-
+            Bootstrap.Log.Info(string.Format("{0}:{1}", "strRequest", strRequest));
             //for proxy
             //WebProxy proxy = new WebProxy(new Uri("http://urlort#");
             //req.Proxy = proxy;
