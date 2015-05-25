@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -17,6 +19,8 @@ namespace BlochsTech.Website.Base
         protected void Application_Start()
         {
             Bootstrap.Log.Info("Application Start");
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlochsTech.Website.Domain.Context.BlochsTechContext, BlochsTech.Website.Domain.Migrations.Configuration>()); 
 
             AreaRegistration.RegisterAllAreas();
 

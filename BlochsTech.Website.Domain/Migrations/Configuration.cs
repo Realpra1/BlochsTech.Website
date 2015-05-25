@@ -5,7 +5,7 @@ namespace BlochsTech.Website.Domain.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BlochsTech.Website.Domain.Context.BlochsTechContext>
+    public sealed class Configuration : DbMigrationsConfiguration<BlochsTech.Website.Domain.Context.BlochsTechContext>
     {
         public Configuration()
         {
