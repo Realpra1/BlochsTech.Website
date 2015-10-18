@@ -1,0 +1,283 @@
+﻿@using System.Configuration
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    Download protocol and licensing document:  <a href="@ConfigurationManager.AppSettings["ProtocolLicensingDocumentLink"]"> [PDF link]</a></br>
+	</br>
+	Project for open source Android BOBC terminal app:  <a href="https://github.com/BlochsTech/BitcoinCardTerminal"> [GitHub link]</a>
+
+</p>
+<h2>Frequently asked questions and answers:</h2>
+<div class="panel-group" id="accordion-faq">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseOne" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> What is this?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                The BlochsTech Open Bitcoin Card (BOBC) is a NFC smart card programmed to act as an easy to use and
+				secure Bitcoin wallet.</br>
+				The product is aimed at those who wish to use Bitcoin, but cannot figure out how to get started and those
+				who are themselves technical, but cannot find a way to introduce family and friends easily.</br>
+				With this card all the user needs to know is his or hers Bitcoin address and PIN code.</br>
+				Private keys are always offline inside the card and the user does not need to set up a PC or smartphone with Bitcoin software.</br>
+				</br>
+				Under the tab "Buy" you can buy a card. Under the tab "Terminal Apps" you can download an app for your Android
+				to receive BOBC payments.</br>
+				Under this tab you can read more information and download the protocol documentation.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseTwo" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i>  How do I charge my card?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+				The easiest way is to pay someone you know in cash and have them transfer Bitcoin to your card's address.
+				The address is in the letter you received with the card.</br>
+				</br>
+				You can also use:</br>
+				<a href="https://localbitcoins.com/">LocalBitcoins</a> (meet a person and exchange coins)</br>
+				<a href="https://www.bitstamp.net/">BitStamp</a> (online exchange, requires ID)</br>
+			</div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseThree" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> What do I do if a merchant does not accept it?
+                </a>
+            </h4>
+        </div>
+
+
+        <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                On the front of your card there is a QR code with the link to this website. Show it to your merchant
+				and he can download the app in no time.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseFour" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Why should I as a merchant accept BOBC?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseFour" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+				Well on top of the advantages of Bitcoin such as no charge backs, no credit card fees and reaching the unbanked BOBC
+				offers plenty on its own:</br>
+				</br>
+				1. BOBC is faster than QR code based mobile wallets, because the transactions can be seen instantly and NFC is faster.</br>
+				2. BOBC does not require your customers to have internet access or a smartphone at all.</br>
+				3. BOBC allows you to be temporarily offline and still accept payment.</br>
+				4. BOBC will not require your regular customers to enter a PIN code, payments will be instant swipe payments.</br>
+				5. BlochsTech will supply you with free promotional cards that you can sell or give away to customers interested 
+				in getting started with Bitcoin. (Price guideline: 0-2$)</br>
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseFive" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> How does it keep me safe?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseFive" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+				The way it works is that the card will return a check code based on the charge amount to the terminal.
+				The terminal will not know how to construct this code and so if you do not see the correct code you simply remove your card.</br>
+				</br>
+				After giving your PIN code the terminal cannot charge your card again for 6 seconds which gives you time to remove it.</br>
+				</br>
+				There are also charge limits based on your average purchase and brute force protection in the PIN code system.</br>
+				</br>
+				The greatest protection of course is that the card is physical and the private keys never leave it. Even if a merchant manages
+				to rip you off, you'll be standing right there and you can report him to the cops like you would with any other theft.</br>
+				</br>
+				For further protection we recommend that you change your PIN code about once a year and use the card with smaller amounts.</br>
+				We recommend using an encrypted paper wallet created on a secure system for larger amounts.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseSix" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Can the card make "swiping" instant NFC payments?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseSix" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Yes!</br>
+				Not only are such payments possible, they are also safe under the BOBC protocol.</br>
+				</br>
+				Where the VISA and MasterCard networks will probably rely on copious amounts of charge-backs to
+				make this work the BOBC protocol has a more elegant solution.</br>
+				</br>
+				Your card will store Bitcoin addresses it makes payments to. Once an address has been paid to 
+				twice it becomes "trusted".</br>
+				Future payments to trusted addresses will not require a PIN code or card unlocking for smaller amounts.</br>
+				The BlochsTech BOBC card is currently programmed to keep track of 30 such trusted addresses.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseSeven" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Are all BOBC cards the same?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseSeven" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Yes! In the sense that all BOBC devices will work together, all BOBC cards are the same.</br>
+				</br>
+				However the protocol is also flexible enough to support differences in charge limits and other implementation details.</br>
+				</br>
+				BlochsTech will strive to remain the one with the best implemented and most trusted card of course.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseEight" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> What are the fees?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseEight" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                There are NO fees as of 15/10/2015. Cards sold after this date will have no fees what-so-ever!</br>
+				</br>
+				At the same time we are planning starting to distribute free promotional cards - these free cards will have a permanent fee of 1.8%.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapse81" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> How do I get a free card?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse81" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Write us at Info@BlochsTech.com to apply for the free card program. We will aim to target specific communities
+				in order to create concentrated pockets of frequent Bitcoin users.</br>
+				</br>
+				It would also be of interest to us if you represent a charitable or Bitcoin promoting organization.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseNine" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Is BOBC trust-less?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseNine" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+				Yes! BOBC was designed from the very beginning to be trust-less.</br>
+				During the design phase it was always assumed that the card terminal was hostile in all situations.</br>
+				</br>
+				In the future we are planning even greater usability and security improvements with the option to load cards with your own
+				Bitcoin keys and more.</br>
+				BlochsTech does NOT store your private keys, we only initialize the cards.</br>
+				</br>
+				Due to the protocol being open and the terminal open source not even the continued existence of BlochsTech is required.</br>
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseTen" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> Is this open source?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                Yes. The protocol document is linked at the top of this page.
+				Anyone can make and sell their own card or terminal based on it.</br>
+				</br>
+				The first Bitcoin card terminal app is also open source and may be freely copied and sold.</br>
+				The specific BlochsTech card implementation is proprietary along with the app icons and card graphics - except
+				the BOBC logo which may be used by any device following the BOBC protocol.
+            </div>
+        </div>
+    </div>
+	
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion-faq" href="#collapseEleven" class="collapsed" aria-expanded="false">
+                    <i class="glyphicon glyphicon-question-sign"></i> What do I do if my card is stolen?
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                1. When you received your card you should also have gotten a letter containing your encrypted private key.</br>
+				2. Decrypt your key <a href="../Content/MyAES.html">here</a>.</br>
+				3. Import your private key in your computer wallet software such as a BlockChain.info or Electrum wallet.</br>
+				4. Empty the card's address.</br>
+				</br>
+				Your card has been secured against brute force attacks and such attacks should take the thieves months if they do not
+				have your PIN code.</br>
+				</br>
+				Remember to only keep small amounts of bitcoins on your BOBC card, it is not meant as a main wallet or storage option.
+            </div>
+        </div>
+    </div>
+</div>
+

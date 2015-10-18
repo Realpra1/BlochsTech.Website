@@ -1,0 +1,14 @@
+﻿@using System.Configuration
+
+@{
+    ViewBag.Title = "Terminal Apps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Terminal apps:</h2>
+<p>
+    <a href="@ConfigurationManager.AppSettings["GooglePlayAppLink"]">
+	Free open source BOBC terminal app at Google Play
+	<img height="75" src="~/Images/app-icon.png" /></a> <a href="https://github.com/BlochsTech/BitcoinCardTerminal"> [GitHub link]</a>
+</p>
+

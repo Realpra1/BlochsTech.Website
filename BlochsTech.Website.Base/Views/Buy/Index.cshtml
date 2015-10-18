@@ -1,0 +1,181 @@
+﻿@using System.Configuration
+@model BlochsTech.Website.Base.ViewModel.PurchaseOrderViewModel
+@{
+    ViewBag.Title = "Buy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    p {
+        margin: 0;
+    }
+</style>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        @using (Html.BeginForm("Create", "Buy", FormMethod.Post, new { @class = "form-horizontal", role = "form", @id = "paypalForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="content-short"><p>The card is a smart card based ultra-light Bitcoin client. This means the security integrity from the decades old smart card industry, cheap pricing and future proof interoperability. </p></div>
+            <div class="content">
+                <p>The card will require Bitcoin blockchain data before being able to sign anything and will even verify the difficulty level.</p>
+                <p>Using Bitcoin transaction data gained this way the card will internally create and sign new transactions without the private keys ever leaving the card.</p>
+                <p>In other words it runs entirely against the Bitcoin network and cannot be used in VISA/MasterCard terminals.</p>
+                <p>However the device is a NFC smart card and will as such communicate with any smartphone with a BOBC terminal app, NFC support and a mobile broadband connection.</p>
+                <p>The BOBC ("BlochsTech Open Bitcoin Card") protocol is open source and so is the first Android terminal program, so you should be able to expect a decent amount of Bitcoin merchants accepting your BOBC device very soon.</p>
+                <p>If a merchant does not have the terminal app, show him the QR code on the front of your card, it will let him download a BOBC app in but a few minutes.</p>
+                <p>Is your merchant offline? No worries, the card caches old transaction data and can still sign new transaction while offline. The merchant's app will broadcast the transaction the next time he re-connects!</p>
+                <br />
+                <p>This device is perfect for those new to Bitcoin as all you need to do is remember your PIN code and the card will protect you from all hacking threats.</p>
+                <p>If you know all about Bitcoin, but don't know how to get your family introduced; give them a BOBC card as a present and load it with some coins. It is by far the easiest and most tangible way to interact with Bitcoin today.</p>
+                <br />
+                <p>
+                    <b>
+                        * 0% fees forever.<br />
+                        * Bitcoin only product, no central point of failure, once you buy its yours.<br />
+						* Global reach and open source.<br />
+                        * Secure and easy to use.
+                    </b>
+                </p>
+                <br />
+                <p>Want to know more? Read our <a href="@Url.Action("Info","Home")">FAQ</a> or check our  <a href="@Url.Action("Company","Home")"> company information page</a>.</p>
+            </div>
+            <a href="#" class="btn btn-info show_hide btn" data-content="toggle-text">Read More</a>
+            <h2 id="buy_bitcoin">Buy the Bitcoin smart card</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CardType, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.CardType, Model.CardTypes, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmEmail, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ConfirmEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sreet, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sreet, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sreet, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Apartament, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Apartament, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Apartament, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-sm-12" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Country, (IEnumerable<SelectListItem>)ViewBag.CountryList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <div class="col-md-12">
+                    <input type="submit" value="Buy card for @ConfigurationManager.AppSettings["PriceSimpleCard"] EUR" class="btn btn-info btn-lg" />
+                </div>
+            </div>
+        }
+
+        <hr />
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul class="list-unstyled">
+                <li><span class="glyphicon glyphicon-ok green"></span> Easy to use, global and 0% fee forever</li>
+                <li><span class="glyphicon glyphicon-ok green"></span> Open source and secure protocol - offline private keys</li>
+                <li><span class="glyphicon glyphicon-ok green"></span> Depends only on Bitcoin network</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <br />
+                    <img class="img-rounded" src="@Url.Content("~/Images/bitcoinCard.png")" height="160" alt="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <h4>Bitcoin Smart Card</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="glyphicon glyphicon-ok green"></span> Easy to use, global and 0% fee forever</li>
+                        <li><span class="glyphicon glyphicon-ok green"></span> Open source and secure protocol - offline private keys</li>
+                        <li><span class="glyphicon glyphicon-ok green"></span> Depends only on Bitcoin network</li>
+                    </ul>
+					<div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="560c041e0000ff000583e228" data-style-height="20px" data-style-width="100%" data-theme="light">
+						<a href="https://www.trustpilot.com/review/blochstech.com" target="_blank">Trustpilot</a>
+					</div>
+                    <p>@ConfigurationManager.AppSettings["PriceSimpleCard"] EUR</p>
+                    @Html.ActionLink("Purchase card", "Index", "Buy", null, null, "buy_bitcoin", null, new { @class = "btn btn-info" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".content").hide();
+        $(".show_hide").on("click", function () {
+            var txt = $(".content").is(':visible') ? 'Read More' : 'Read Less';
+            $(".show_hide").text(txt);
+            $('.content').slideToggle(200);
+        });
+    });
+</script>
