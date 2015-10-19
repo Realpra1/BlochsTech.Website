@@ -125,7 +125,7 @@
             <div class="form-group">
                 <br />
                 <div class="col-md-12">
-                    <input type="submit" value="Buy card for @ConfigurationManager.AppSettings["PriceSimpleCard"] EUR" class="btn btn-info btn-lg" />
+                    <input onclick="ga('send', 'event', 'click', 'purchaseclick');" type="submit" value="Buy card for @ConfigurationManager.AppSettings["PriceSimpleCard"] EUR" class="btn btn-info btn-lg" />
                 </div>
             </div>
         }
