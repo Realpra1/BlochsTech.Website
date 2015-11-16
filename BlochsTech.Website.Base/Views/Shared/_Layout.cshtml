@@ -18,7 +18,19 @@
 	  ga('create', 'UA-64071780-1', 'auto');
 	  ga('send', 'pageview');
 	</script>
-	<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+	<script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+		fbq('init', '1072377506108539');
+		fbq('track', "PageView");
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1072377506108539&ev=PageView&noscript=1"
+	/></noscript>
 </head>
 <body>
     <div id="wrap">
@@ -52,9 +64,9 @@
     </div>
     <footer class="footer">
         <div class="container">
-			<div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="560c041e0000ff000583e228" data-style-height="20px" data-style-width="100%" data-theme="light">
-				<a href="https://www.trustpilot.com/review/blochstech.com" target="_blank">Trustpilot</a>
-			</div>
+			<p class="centered"><a href="https://www.trustpilot.com/review/blochstech.com">
+				<img border="0" alt="TrustPilot profile link" src="/Images/trustpilot_logo2.png" width="144" height="30">
+			</a></p>
             <p class="centered">&copy; @DateTime.Now.Year - BlochsTech</p>
         </div><!-- /container -->
     </footer>
