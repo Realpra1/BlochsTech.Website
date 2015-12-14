@@ -1,0 +1,8 @@
+﻿{
+  "Servers": [
+	"electrum.no-ip.org",
+	"electrum.mindspot.org",
+	"electrum.bitfuzz.nl",
+	"VPS.hsmiths.com"
+  ]
+}
